@@ -9,20 +9,6 @@ class RingBuffer:
 
     def append(self, item):
 
-        # self.current = 0
-        # if self.storage.length == self.capacity:
-            
-        #     if self.current == 0:
-        #         self.current = self.capacity
-        #     node = self.storage.head
-
-        #     for x in range(1,self.current):
-        #         node = node.next
-
-        #     node.value = item
-        #     self.current -=1
-        # else:
-
             if self.storage.length == self.capacity:
                 #current oldest is the first one
                 node_to_change = self.storage.head
