@@ -27,6 +27,10 @@ class RingBuffer:
                 #current oldest is the first one
                 node_to_change = self.storage.head
 
+                #reset the current once eveythings been changed
+                if self.current ==5:
+                    self.current = 0
+
                 for x in range(0,self.current):
                     node_to_change = node_to_change.next
                 
