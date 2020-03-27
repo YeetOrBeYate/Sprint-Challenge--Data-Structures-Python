@@ -19,16 +19,29 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# I ran into this approach from a stackerOverflow thread I found a long time ago during pair programming
-#https://stackoverflow.com/questions/7571635/fastest-way-to-check-if-a-value-exists-in-a-list
-#basically everyon there said just asking for x in array was the fastest way to do things. Run time lowered from 6->1 second
+
+first_list = BinarySearchTree('Yeet')
 
 for name in names_1:
-    if name in names_2:
-        duplicates.append(name)
+    first_list.insert(name)
+
+for name2 in names_2:
+    if first_list.contains(name2):
+        duplicates.append(name2)
+
 
 
 end_time = time.time()
+
+def quick_test(node):
+    print(node.value)
+    if node.left:
+        quick_test(node.left)
+    if node.right:
+        quick_test(node.right)
+# so it appears that all 1000 are in my tree....
+# quick_test(first_list)
+    
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
